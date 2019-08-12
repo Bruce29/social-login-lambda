@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "social_login-executor",
+    "name": "social_login",
+    "region": "us-east-1"
+  },
+  "api": {
+    "id": "yrigb41dt7"
+  }
+}
