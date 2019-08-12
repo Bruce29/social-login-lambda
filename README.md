@@ -37,7 +37,7 @@ Copy and paste the following code inside the app.js file
     console.log(`App is listening on port ${port}.`)
     )
 ```
-**Creating additional endpoints in express**
+**Creating more endpoints in express**
 ```javascript
     app.get('/:name', function(req, res){
         res.send('Req params: ' + req.params.name);
