@@ -136,3 +136,11 @@ In future, if you want to change your app code (i.e. add more routes), you can d
 ```
     $ claudia update
 ```
+---
+# Add dependencies
+```shell
+    npm install passport --save
+    npm install passport-facebook --save
+    npm install passport-github2 --save
+    npm install passport-twitter --save
+```
