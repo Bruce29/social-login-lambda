@@ -28,6 +28,7 @@ Copy and paste the following code inside the app.js file
 ```javascript
     const express = require('express')
     const app = express()
+    app.use(express.json())
 
     app.get('/', (req, res) => res.send('Hello world!'))
 
@@ -44,7 +45,7 @@ Copy and paste the following code inside the app.js file
     });
 
     app.post('/:name', function (req, res) {
-        res.send('Got a POST request');
+        res.send('Got a POST request' + JSON.stringify(req.body));
     });
 
     app.put('/:name', function (req, res) {
