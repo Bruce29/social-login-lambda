@@ -137,3 +137,34 @@ In future, if you want to change your app code (i.e. add more routes), you can d
 ```
     $ claudia update
 ```
+
+# Examples
+### Create a module to export some function or function like a class
+1. app.js file
+```javascript
+   const express = require('express')
+   const app = express()
+   var person = require('../service/payment.service')
+   app.use(express.json())
+   app.get('/', (req, res) => res.send('Hello world!'));
+
+   app.post('/:name', function (req, res) {
+       var person1 = new person('James', 'Bond');
+       console.log(person1.fullName());
+       res.send('Got a POST request' + JSON.stringify(req.body));
+   });
+
+   const port = process.env.PORT || 3011
+   app.listen(port, () => console.log(`App is listening on port ${port}.`))
+```
+
+1. functionName.js file
+```javascript
+   module.exports = function(firstName, lastName) {
+       this.firstName = firstName;
+       this.lastName = lastName;
+       this.fullName = function () { 
+           return this.firstName + ' ' + this.lastName;
+       }
+   }
+```
