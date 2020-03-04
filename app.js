@@ -4,26 +4,10 @@
 const express = require('express')
 var passport = require('passport');
 var session = require('express-session');
-var mongoConnection = require('./app/mongoconfig/mongoconfig');
+//var mongoConnection = require('./app/dataaccess/mongoconfig/mongoconfig');
+var userBusiness = require('./app/business/userBusiness');
 const app = express()
-/*
-app.get('/', (req, res) => res.send('Running a node-express app!'))
-
-app.get('/:name', function(req, res){
-    res.send('Req params: ' + req.params.name);
-});
-
-app.post('/:name', function (req, res) {
-    res.send('Got a POST request');
-});
-
-app.put('/:name', function (req, res) {
-    res.send('Got a PUT request');
-});
-
-app.delete('/:name', function (req, res) {
-    res.send('Got a DELETE request');
-});
+app.use(express.json());  
 const port = process.env.PORT || 3011
 app.listen(port, () => console.log(`App is listening on port ${port}.`))*/
 app.use(session({
